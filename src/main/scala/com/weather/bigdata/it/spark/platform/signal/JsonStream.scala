@@ -101,8 +101,6 @@ object JsonStream {
 
 
 
-  def main(args: Array[String]): Unit = {
 
-  }
 
 }

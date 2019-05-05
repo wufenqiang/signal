@@ -1,7 +1,6 @@
 package com.weather.bigdata.it.spark.platform.signal
 
-import com.alibaba.fastjson.JSONObject
-import com.weather.bigdata.it.utils.operation.JsonOperation
+import com.alibaba.fastjson.{JSON, JSONObject}
 
 object anaAttribute {
   private val timeStepsKey:String=Constant.timeStepsKey
@@ -14,7 +13,7 @@ object anaAttribute {
       Array.empty[Double]
     }
   }
-  def getTimeSteps(attribute:String):Array[Double]=this.getTimeSteps(JsonOperation.Str2JSONObject(attribute))
+  def getTimeSteps(attribute:String):Array[Double]=this.getTimeSteps(JSON.parseObject(attribute))
   def returnTimeSteps(attribute:JSONObject,timeSteps:Array[Double]): JSONObject ={
     val timeStepsStr:String=timeSteps.map(d=>d.toString).reduce((x,y)=>(x+","+y))
     attribute.put(this.timeStepsKey, timeStepsStr)

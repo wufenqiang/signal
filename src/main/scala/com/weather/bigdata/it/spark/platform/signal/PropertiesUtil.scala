@@ -4,7 +4,6 @@ import java.io.InputStream
 import java.util.Date
 
 import com.weather.bigdata.it.utils.formatUtil.DateFormatUtil
-import org.apache.log4j.Logger
 
 private object PropertiesUtil {
   private val prop:java.util.Properties={
